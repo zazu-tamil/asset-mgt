@@ -560,5 +560,41 @@ class Master extends CI_Controller {
         
         $this->load->view('page/master/'. $data['s_url'] ,$data); 
 	} 
+    public function print_qrcode_v2($asset_item_qrcode_gen_id)
+	{
+	    if(!$this->session->userdata(SESS_HD . 'logged_in'))  redirect(); 
+        
+        
+        if($this->session->userdata(SESS_HD . 'user_type') != 'Admin' and $this->session->userdata(SESS_HD . 'user_type') != 'Manager')
+        {
+            echo "<h3 style='color:red;'>Permission Denied</h3>"; exit;
+        } 
+        
+       // $data['js'] = 'ams-asset-qrcode.inc';  
+        $data['s_url'] = 'print-qrcode-v2';  
+        $data['js'] = 'print-qrcode-v2.inc';
+        $data['title'] = 'Asset QRCode Print'; 
+        
+       $sql = "
+                select 
+                a.*           
+                from ams_asset_item_qrcode_info as a   
+                where a.status != 'Delete'
+                and a.asset_item_qrcode_gen_id = $asset_item_qrcode_gen_id
+                order by a.asset_item_serial_no asc                   
+        ";
+        
+       $data['qrcode'] = array();
+        
+        $query = $this->db->query($sql);
+       
+        foreach ($query->result_array() as $row)
+        {
+            $data['qrcode'][] = $row;     
+        }
+         
+        
+        $this->load->view('page/master/'. $data['s_url'] ,$data); 
+	} 
      
 }

@@ -46,7 +46,7 @@
                       <td><?php echo $ls['asset_item_qty']?></td>   
                     <td><?php echo $ls['status']?></td>   
                     <td class="text-center">
-                        <a href="<?php echo site_url('print-asset-qrcode/' . $ls['asset_item_qrcode_gen_id'])?>" target="_blank" class="btn btn-warning btn-xs" title="Print"><i class="fa fa-print"></i></a>
+                        <a href="<?php echo site_url('print-asset-qrcode-v2/' . $ls['asset_item_qrcode_gen_id'])?>" target="_blank" class="btn btn-warning btn-xs" title="Print"><i class="fa fa-print"></i></a>
                     </td>                                  
                     <td class="text-center">
                         <button value="<?php echo $ls['asset_item_qrcode_gen_id']?>" class="del_record btn btn-danger btn-xs" title="Delete"><i class="fa fa-remove"></i></button>

@@ -68,7 +68,9 @@ $route['ams-asset-item-list'] = 'master/asset_item_list';
 $route['ams-asset-item-list/(:num)'] = 'master/asset_item_list/$1';  
 
 $route['ams-asset-qrcode-list/(:num)'] = 'master/asset_qrcode_list/$1';  
+
 $route['print-asset-qrcode/(:num)'] = 'master/print_qrcode/$1';  
+$route['print-asset-qrcode-v2/(:num)'] = 'master/print_qrcode_v2/$1';  
 
  
  
