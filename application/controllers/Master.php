@@ -395,7 +395,7 @@ class Master extends CI_Controller {
                 $qr_code_ctnt = $location_code .'-'. $category_code .'-' . $item_code . '-'. ($sno1);
                 $asset_item_serial_no =  ($sno + $k);
                 
-                $qr = $this->asset_model->generate_qrcode($qr_code_ctnt , 'asset-qr/');
+                //$qr = $this->asset_model->generate_qrcode($qr_code_ctnt , 'asset-qr/');
                 
                 
                 $ins = array(
@@ -405,7 +405,7 @@ class Master extends CI_Controller {
                         'asset_location_id' => $this->input->post('asset_location_id'),  
                         'qr_code_ctnt' => $qr_code_ctnt,
                         'asset_item_serial_no' => $asset_item_serial_no,
-                        'qr_path' => $qr['file'],
+                       // 'qr_path' => $qr['file'],
                         'status' => $this->input->post('status'),
                         'created_by' => $this->session->userdata(SESS_HD . 'user_id'),                          
                         'created_date' => date('Y-m-d H:i:s') ,
