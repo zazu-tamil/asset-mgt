@@ -29,7 +29,8 @@
                 <th>Asset Category</th>   
                 <th>Asset Item</th>   
                 <th>Asset Location</th>   
-                <th>Qty</th>   
+                <th>Qty</th>  
+                <th>Date of Creation</th>
                 <th>Status</th>  
                 <th colspan="2" class="text-center">Action</th>  
             </tr>
@@ -44,6 +45,7 @@
                     <td><?php echo $ls['asset_item_name']?><br /><i class="badge bg-success"><?php echo $ls['asset_item_code']?></i></td>   
                     <td><?php echo $ls['asset_location_name']?><br /><i class="badge bg-success"><?php echo $ls['asset_location_code']?></i></td>   
                       <td><?php echo $ls['asset_item_qty']?></td>   
+                    <td><?php echo  date("d-m-Y", strtotime($ls['created_date']));?></td>   
                     <td><?php echo $ls['status']?></td>   
                     <td class="text-center">
                         <a href="<?php echo site_url('print-asset-qrcode-v2/' . $ls['asset_item_qrcode_gen_id'])?>" target="_blank" class="btn btn-warning btn-xs" title="Print"><i class="fa fa-print"></i></a>

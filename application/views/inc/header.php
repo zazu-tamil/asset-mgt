@@ -1,13 +1,16 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo PG_HEAD; if(isset($title)) echo " - " . $title; ?></title>
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url() ?>/asset/images/user.jpg"> 
+  <title><?php echo PG_HEAD;
+  if (isset($title))
+    echo " - " . $title; ?></title>
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url() ?>/asset/images/Classwall-Logo-SM.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -26,9 +29,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- jvectormap -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet"
+    href="<?php echo base_url() ?>asset/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet"
+    href="<?php echo base_url() ?>asset/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
@@ -40,80 +45,114 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .skin-blue .main-header .logo {
+      background-color: #ffffff;
+      color: #fff;
+      border-bottom: 0 solid transparent;
+    }
+
+    .skin-blue .main-header .logo:hover {
+      background-color: #ffffffff;
+      color: #fff;
+      border-bottom: 0 solid transparent;
+    }
+
+    .skin-blue .main-header .navbar {
+      background-color: #F37817;
+    }
+    .sidebar-toggle:hover {
+      background-color: #fbb219 !important;
+    }
+  </style>
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="" class="logo ">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"> PYR </span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><?php echo PG_HEAD; ?></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class=" logo-mini" style="background-color:white;border-radius:5px;"> <img
+            src="<?php echo base_url() ?>/asset/images/Classwall-Logo-SM.png" class="img-circle img-responsive"
+            alt="<?php echo PG_HEAD; ?>">
+        </span>
+        <!-- logo for regular state and mobile devices -->
+        <!-- <span class="logo-lg"><?php echo PG_HEAD; ?></span> -->
+        <div class="logo-lg" style="background-color:#f4f4f4;border-radius:0px; "><img
+            src="<?php echo base_url() ?>/asset/images/Classwall-H.png" class="img-rounded img-responsive"
+            alt="<?php echo PG_HEAD; ?>"></div>
       </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-           
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url() ?>asset/images/user.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo strtoupper($this->session->userdata(SESS_HD . 'user_name')) ;?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="<?php echo base_url() ?>asset/images/user.jpg" class="img-circle" alt="User Image">
+        <span class="navbar-brand hidden-xs" style="font-size: 18px; color: #fff; margin-left: 15px;">
+          <?php echo PG_HEAD; ?>
+         </span>
 
-                <p>
-                  <?php echo strtoupper($this->session->userdata(SESS_HD . 'user_name')) ;?>
-                  <small><?php echo date('d-M-Y')?></small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <?php /*
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+        <div class="navbar-custom-menu">
+
+          <ul class="nav navbar-nav">
+
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="<?php echo base_url() ?>asset/images/user_default.png" class="user-image" alt="User Image">
+                <span
+                  class="hidden-xs"><?php echo strtoupper($this->session->userdata(SESS_HD . 'user_name')); ?></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="<?php echo base_url() ?>asset/images/user_default.png" class="img-circle" alt="User Image">
+
+                  <p>
+                    <?php echo strtoupper($this->session->userdata(SESS_HD . 'user_name')); ?>
+                    <small><?php echo date('d-M-Y') ?></small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <?php /*
+       <li class="user-body">
+         <div class="row">
+           <div class="col-xs-4 text-center">
+             <a href="#">Followers</a>
+           </div>
+           <div class="col-xs-4 text-center">
+             <a href="#">Sales</a>
+           </div>
+           <div class="col-xs-4 text-center">
+             <a href="#">Friends</a>
+           </div>
+         </div>
+         <!-- /.row -->
+       </li> */ ?>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left hide">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
+                  <div class="pull-right">
+                    <a href="<?php echo site_url('logout') ?>" class="btn btn-defaultv btn-flat btn-danger">Sign
+                      out</a>
                   </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li> */ ?>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left hide">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="<?php echo site_url('logout') ?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li class="hide">
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <?php  include_once('left-menu.php'); ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+                </li>
+              </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+            <li class="hide">
+              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <?php include_once('left-menu.php'); ?>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">

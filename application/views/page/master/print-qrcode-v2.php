@@ -12,15 +12,22 @@
                 <div class="box box-info" style="margin-top:15px;">
                     <div class="box-header">
                         <strong>
-                            Select QR Codes to Print &nbsp; &nbsp; &nbsp;
+                            Select QR Codes to Print &nbsp;&nbsp;&nbsp;
                             <?php
-                            echo
-                                $defenition_list['asset_location_name'] . ' [' . $defenition_list['asset_location_code'] . '] => ' .
-                                $defenition_list['asset_category_name'] . ' [' . $defenition_list['asset_category_code'] . '] => ' .
-                                $defenition_list['asset_item_name'] . ' [' . $defenition_list['asset_item_code'] . '] => Qty: ' .
-                                $defenition_list['asset_item_qty'];
+                            echo sprintf(
+                                '%s [%s] &rarr; %s [%s] &rarr; %s [%s] &rarr; Qty: %s &nbsp;&nbsp; <small>(%s)</small>',
+                                $defenition_list['asset_location_name'],
+                                $defenition_list['asset_location_code'],
+                                $defenition_list['asset_category_name'],
+                                $defenition_list['asset_category_code'],
+                                $defenition_list['asset_item_name'],
+                                $defenition_list['asset_item_code'],
+                                $defenition_list['asset_item_qty'],
+                                date('d-M-Y', strtotime($defenition_list['created_date']))
+                            );
                             ?>
                         </strong>
+
 
 
                         <div class="pull-right">

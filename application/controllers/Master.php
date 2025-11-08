@@ -591,7 +591,8 @@ class Master extends CI_Controller
                 c.asset_item_code,
                 d.asset_location_name,
                 d.asset_location_code,
-                a.asset_item_qty
+                a.asset_item_qty,
+                a.created_date
             FROM
                 ams_asset_item_qrcode_gen_info AS a
             LEFT JOIN ams_asset_category_info AS b ON b.asset_category_id = a.asset_category_id
